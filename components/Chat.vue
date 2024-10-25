@@ -1,8 +1,8 @@
 <template>
-  <div class="w-[90%] lg:w-[60%] mx-auto lg:p-20 bg-red-600 min-h-[85vh]">
-    <div class="w-full h-full bg-green-500 grid grid-cols-2">
+  <div class="w-[90%] lg:w-[60%] mx-auto lg:p-20 min-h-[85vh]">
+    <div class="w-full h-full grid grid-cols-2">
       <!-- ---------------col-1 ----->
-      <div class="h-full bg-yellow-400">
+      <div class="h-full">
         <!-- ==================col 1==================== -->
         <div>
           <div class="w-full h-[356px]">
@@ -89,7 +89,7 @@
         </div>
       </div>
 
-      <div class="h-full bg-purple-900">
+      <div class="h-full">
         <!-- =======================Chat Col===================== -->
         <div class="bg-[#FED0DD2B] relative h-full w-full">
           <div class="flex gap-x-4 w-full absolute bottom-0 left-0">
@@ -115,7 +115,7 @@
             <RouterLink
               to="/chat"
               type="link"
-              class="w-[68px] h-[44px] bg-[#D11248] rounded-[16px] flex items-center justify-center"
+              class="w-[68px] h-[44px] rounded-[16px] flex items-center justify-center"
             >
               <img src="/public/icons/share.png" alt="" />
             </RouterLink>
@@ -152,7 +152,7 @@
             </div>
           </div>
 
-          <div class="h-[547px] my-auto bg-cyan-950 overflow-hidden my-20">
+          <div class="h-[547px] my-auto overflow-hidden my-20">
             <div class="w-full h-full overflow-auto">
               <div
                 class="bg-[#F2F2F2] p-[10px] w-[219px] rounded-tr-[8px] rounded-br-[8px] rounded-bl-[8px]"

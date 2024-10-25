@@ -3,7 +3,7 @@
 <script setup>
 const { id } = useRoute().params;
 
-const { data, error } = await useFetch(`https://dummyjson.com/data?s/${id}`);
+const { data, error } = await useFetch(`https://dummyjson.com/data?./${id}`);
 </script>
 
 <template>

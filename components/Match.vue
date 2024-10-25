@@ -3,16 +3,18 @@
 //   $fetch("https://dummyjson.com/users?limit=12")
 // );
 
+const route = useRoute();
 definePageMeta({
   layout: "users",
 });
 
 const { data, error } = await useFetch("https://dummyjson.com/users?limit=12");
 console.log(data);
+console.log(data);
 </script>
 
 <template>
-  <section class="pt-20">
+  <section class="py-20">
     <div class="container mx-auto py-[60px]">
       <div class="w-full">
         <h1
@@ -21,7 +23,7 @@ console.log(data);
           People that match your interest
         </h1>
         <ul
-          class="text-[16px] font-Poppins font-[400] leading-[24px] tracking-[-1.2%] text-[#7D0B2B] flex-wrap md:flex-nowrap flex gap-[10px]"
+          class="text-[16px] font-Poppins font-[400] leading-[24px] tracking-[-1.2%] text-[#7D0B2B] flex-wrap lg:flex-nowrap flex gap-[10px]"
         >
           <li class="p-[10px] rounded-[8px] bg-[#F8F8FB]">Drinking</li>
           <li class="p-[10px] rounded-[8px] bg-[#F8F8FB]">Dancing</li>
@@ -42,56 +44,57 @@ console.log(data);
               class="border-[1.5px] border-[#FB1656] rounded-[24px] py-[8px] px-[4px] bg-[#FAFAFA] relative"
             >
               <!-- Roinded Image==== -->
-
-              <div
-                class="w-[67.5px] h-[69.49px] border-[2.25px] border-[#FB1656] rounded-full absolute top-[55%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
-              >
-                <NuxtImg
-                  class="w-full h-full rounded-full object-cover"
-                  :src="user.image"
-                  alt=""
-                />
-              </div>
-              <!-- grid image -->
-              <div
-                class="grid grid-cols-3 h-[190.42px] rounded-[24px] mb-[7.3px]"
-              >
-                <NuxtImg
-                  class="object-cover h-full rounded-tl-[24px]"
-                  :src="user.image"
-                  alt=""
-                />
-                <NuxtImg class="object-cover h-full" :src="user.image" alt="" />
-                <NuxtImg
-                  class="object-cover h-full rounded-tr-[24px]"
-                  :src="user.image"
-                  alt=""
-                />
-              </div>
-              <!-- User Name -->
-
-              <div class="pt-10">
-                <p
-                  class="text-center font-Poppins text-[15px] lg:text-[18px] font-[700] leading-[21px] tracking-[-1.6%] text-[#454747]"
+              <NuxtLink :to="`/users/${user.id}`">
+                <div
+                  class="w-[67.5px] h-[69.49px] border-[2.25px] border-[#FB1656] rounded-full absolute top-[55%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
                 >
-                  <span>{{ user.firstName }}</span>
-                  <span class="mx-2">{{ user.lastName }}</span>
-                  <span>{{ user.age }}</span>
-                </p>
-                <!-- ==============City======== -->
-                <p class="text-center text-[#454747] font-[300]">
-                  {{ user.address.state }}
-                </p>
-              </div>
+                  <img
+                    class="w-full h-full rounded-full object-cover"
+                    :src="user.image"
+                    alt=""
+                  />
+                </div>
+                <!-- grid image -->
+                <div
+                  class="grid grid-cols-3 h-[190.42px] rounded-[24px] mb-[7.3px]"
+                >
+                  <img
+                    class="object-cover h-full rounded-tl-[24px]"
+                    :src="user.image"
+                    alt=""
+                  />
+                  <img class="object-cover h-full" :src="user.image" alt="" />
+                  <img
+                    class="object-cover h-full rounded-tr-[24px]"
+                    :src="user.image"
+                    alt=""
+                  />
+                </div>
+                <!-- User Name -->
 
-              <!-- Like and comment  -->
-              <div
-                class="w-[113.25px] mx-auto flex gap-[35.25px] p-[10.23px] rounded-[24.55px] bg-[#FED0DD] mt-[15px]"
-              >
-                <NuxtImg src="/public/icons/Union.png" alt="" />
+                <div class="pt-10">
+                  <p
+                    class="text-center font-Poppins text-[15px] lg:text-[18px] font-[700] leading-[21px] tracking-[-1.6%] text-[#454747]"
+                  >
+                    <span>{{ user.firstName }}</span>
+                    <span class="mx-2">{{ user.lastName }}</span>
+                    <span>{{ user.age }}</span>
+                  </p>
+                  <!-- ==============City======== -->
+                  <p class="text-center text-[#454747] font-[300]">
+                    {{ user.address.state }}
+                  </p>
+                </div>
 
-                <NuxtImg src="/public/icons/msgIcon.png" alt="" />
-              </div>
+                <!-- Like and comment  -->
+                <div
+                  class="w-[113.25px] mx-auto flex gap-[35.25px] p-[10.23px] rounded-[24.55px] bg-[#FED0DD] mt-[15px]"
+                >
+                  <img src="/public/icons/Union.png" alt="" />
+
+                  <img src="/public/images/msgIcon.png" alt="" />
+                </div>
+              </NuxtLink>
             </div>
           </div>
 
@@ -102,7 +105,7 @@ console.log(data);
               <li
                 class="border border-[#828191] rounded-[8px] p-[10px] text-[#828191] items-center flex gap-[10px]"
               >
-                <NuxtImg :src="o" alt="" /> Previous
+                <img :src="o" alt="" /> Previous
               </li>
               <li
                 class="w-[40px] h-[48px] rounded-[8px] p-[10px] bg-[#FB1656] text-[20px] leading-[28px] font-Raleway tracking-[-1.6%] text-white flex justify-center items-center"
@@ -130,9 +133,9 @@ console.log(data);
                 10
               </li>
               <li
-                class="border border-[#828191] rounded-[8px] p-[10px] text-[#828191] flex items-center gap-[10px]"
+                class="border border-[#828191] rounded-[8px] py-[10px] px-[15px] text-[#828191] flex items-center gap-[10px]"
               >
-                Next <NuxtImg :src="o" alt="" />
+                Next <img :src="o" alt="" />
               </li>
             </ul>
           </div>

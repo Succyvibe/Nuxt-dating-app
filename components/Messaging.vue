@@ -11,10 +11,10 @@ import share from "@/assets/icons/share.png";
 </script> -->
 
 <template>
-  <div class="w-[90%] lg:w-[60%] mx-auto lg:p-20 bg-red-600 min-h-[85vh]">
-    <div class="w-full h-full bg-green-500 grid grid-cols-2">
+  <div class="w-[90%] lg:w-[60%] mx-auto lg:p-20">
+    <div class="w-full h-full grid grid-cols-2">
       <!-- ---------------col-1 ----->
-      <div class="h-full bg-yellow-400">
+      <div class="h-full">
         <!-- ==================col 1==================== -->
         <div>
           <div class="w-full h-[356px]">
@@ -101,7 +101,7 @@ import share from "@/assets/icons/share.png";
         </div>
       </div>
 
-      <div class="h-full bg-purple-900">
+      <div class="h-full">
         <!-- =======================Chat Col===================== -->
         <div class="bg-[#FED0DD2B] relative h-full w-full">
           <div class="flex gap-x-4 w-full absolute bottom-0 left-0">
