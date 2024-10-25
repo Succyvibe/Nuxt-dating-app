@@ -1,16 +1,5 @@
-<script setup lang="ts">
-useHead({
-  title: "My Dating App",
-  meta: [{ name: "description", content: "My amazing site." }],
-  bodyAttrs: {
-    class: "test",
-  },
-  script: [{ innerHTML: "console.log('Hello world')" }],
-});
-</script>
-
 <template>
-  <div>
+  <div class="font-['Poppins']">
     <HeroSection />
     <Results />
     <About />
@@ -20,3 +9,17 @@ useHead({
     <MeetLove />
   </div>
 </template>
+
+<style>
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (max-width: 740px) {
+  .container {
+    width: 90%;
+  }
+}
+</style>

@@ -3,11 +3,16 @@
 //   $fetch("https://dummyjson.com/users?limit=12")
 // );
 
+definePageMeta({
+  layout: "users",
+});
+
 const { data, error } = await useFetch("https://dummyjson.com/users?limit=12");
+console.log(data);
 </script>
 
 <template>
-  <section>
+  <section class="pt-20">
     <div class="container mx-auto py-[60px]">
       <div class="w-full">
         <h1
@@ -31,70 +36,63 @@ const { data, error } = await useFetch("https://dummyjson.com/users?limit=12");
             class="w-full grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[20px]"
           >
             <!-- Main card -->
+            <div
+              v-for="user in data?.users"
+              :key="user.id"
+              class="border-[1.5px] border-[#FB1656] rounded-[24px] py-[8px] px-[4px] bg-[#FAFAFA] relative"
+            >
+              <!-- Roinded Image==== -->
 
-            <NuxtLink :to="`/users/${user.id}`">
               <div
-                v-for="user in data?.users"
-                :key="user.id"
-                class="border-[1.5px] border-[#FB1656] rounded-[24px] py-[8px] px-[4px] bg-[#FAFAFA] relative"
+                class="w-[67.5px] h-[69.49px] border-[2.25px] border-[#FB1656] rounded-full absolute top-[55%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
               >
-                <!-- Roinded Image==== -->
-
-                <div
-                  class="w-[67.5px] h-[69.49px] border-[2.25px] border-[#FB1656] rounded-full absolute top-[55%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
-                >
-                  <NuxtImg
-                    class="w-full h-full rounded-full object-cover"
-                    :src="user.image"
-                    alt=""
-                  />
-                </div>
-                <!-- grid image -->
-                <div
-                  class="grid grid-cols-3 h-[190.42px] rounded-[24px] mb-[7.3px]"
-                >
-                  <NuxtImg
-                    class="object-cover h-full rounded-tl-[24px]"
-                    :src="user.image"
-                    alt=""
-                  />
-                  <NuxtImg
-                    class="object-cover h-full"
-                    :src="user.image"
-                    alt=""
-                  />
-                  <NuxtImg
-                    class="object-cover h-full rounded-tr-[24px]"
-                    :src="user.image"
-                    alt=""
-                  />
-                </div>
-                <!-- User Name -->
-
-                <div class="pt-10">
-                  <p
-                    class="text-center font-Poppins text-[15px] lg:text-[18px] font-[700] leading-[21px] tracking-[-1.6%] text-[#454747]"
-                  >
-                    <span>{{ user.firstName }}</span>
-                    <span class="mx-2">{{ user.lastName }}</span>
-                    <span>{{ user.age }}</span>
-                  </p>
-                  <!-- ==============City======== -->
-                  <p class="text-center text-[#454747] font-[300]">
-                    {{ user.address.state }}
-                  </p>
-                </div>
-
-                <!-- Like and comment  -->
-                <div
-                  class="w-[113.25px] mx-auto flex gap-[35.25px] p-[10.23px] rounded-[24.55px] bg-[#FED0DD] mt-[15px]"
-                >
-                  <NuxtImg src="/public/icons/Union.png" alt="" />
-
-                  <NuxtImg src="/public/icons/msgIcon.png" alt="" />
-                </div>
+                <NuxtImg
+                  class="w-full h-full rounded-full object-cover"
+                  :src="user.image"
+                  alt=""
+                />
               </div>
-            </NuxtLink>
+              <!-- grid image -->
+              <div
+                class="grid grid-cols-3 h-[190.42px] rounded-[24px] mb-[7.3px]"
+              >
+                <NuxtImg
+                  class="object-cover h-full rounded-tl-[24px]"
+                  :src="user.image"
+                  alt=""
+                />
+                <NuxtImg class="object-cover h-full" :src="user.image" alt="" />
+                <NuxtImg
+                  class="object-cover h-full rounded-tr-[24px]"
+                  :src="user.image"
+                  alt=""
+                />
+              </div>
+              <!-- User Name -->
+
+              <div class="pt-10">
+                <p
+                  class="text-center font-Poppins text-[15px] lg:text-[18px] font-[700] leading-[21px] tracking-[-1.6%] text-[#454747]"
+                >
+                  <span>{{ user.firstName }}</span>
+                  <span class="mx-2">{{ user.lastName }}</span>
+                  <span>{{ user.age }}</span>
+                </p>
+                <!-- ==============City======== -->
+                <p class="text-center text-[#454747] font-[300]">
+                  {{ user.address.state }}
+                </p>
+              </div>
+
+              <!-- Like and comment  -->
+              <div
+                class="w-[113.25px] mx-auto flex gap-[35.25px] p-[10.23px] rounded-[24.55px] bg-[#FED0DD] mt-[15px]"
+              >
+                <NuxtImg src="/public/icons/Union.png" alt="" />
+
+                <NuxtImg src="/public/icons/msgIcon.png" alt="" />
+              </div>
+            </div>
           </div>
 
           <!-- =======================sliding buttons -->

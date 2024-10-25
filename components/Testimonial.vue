@@ -1,5 +1,5 @@
 <template>
-  <section class="lg:px-[160px] lg:py-[40px]">
+  <section class="lg:py-[40px]">
     <div class="container mx-auto relative">
       <NuxtImg
         src="/icons/quote.png"
@@ -16,8 +16,9 @@
       >
         What Our Users Say
       </h1>
+
       <div
-        class="md:flex md:justify-between md:items-center lg:p-20 md:gap-x-10"
+        class="md:flex md:justify-between md:items-center lg:py-20 md:gap-x-10"
       >
         <img
           src="/public/images/Frame-0.png"
@@ -44,25 +45,25 @@
             </h1>
             <ul class="flex gap-x-2 justify-center md:justify-start">
               <li>
-                <NuxtImg src="/public/icons/star.png" alt="5 star rating" />
+                <img src="/public/icons/star.png" alt="5 star rating" />
               </li>
               <li>
-                <NuxtImg src="/public/icons/star.png" alt="5 star rating" />
+                <img src="/public/icons/star.png" alt="5 star rating" />
               </li>
               <li>
-                <NuxtImg src="/public/icons/star.png" alt="5 star rating" />
+                <img src="/public/icons/star.png" alt="5 star rating" />
               </li>
               <li>
-                <NuxtImg src="/public/icons/star.png" alt="5 star rating" />
+                <img src="/public/icons/star.png" alt="5 star rating" />
               </li>
               <li>
-                <NuxtImg src="/public/icons/star.png" alt="5 star rating" />
+                <img src="/public/icons/star.png" alt="5 star rating" />
               </li>
               <li>
-                <NuxtImg src="/public/icons/star.png" alt="5 star rating" />
+                <img src="/public/icons/star.png" alt="5 star rating" />
               </li>
               <li>
-                <NuxtImg src="/public/icons/star.png" alt="5 star rating" />
+                <img src="/public/icons/star.png" alt="5 star rating" />
               </li>
             </ul>
             <p

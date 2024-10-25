@@ -1,5 +1,5 @@
 <template>
-  <section class="pb-5 md:pb-0">
+  <section class="pb-5 md:py-14">
     <h1
       class="font-[700] text-[24px] leading-[33.6px] mb-4 text-center lg:hidden mt-6"
     >

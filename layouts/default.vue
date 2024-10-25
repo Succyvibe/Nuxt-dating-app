@@ -1,30 +1,13 @@
-<script>
-// export default {
-//   data() {
-//     return {
-//       showMobileMenu: false,
-//       watch: {
-//         $route() {
-//           this.showMobileMenu = false;
-//         },
-//       },
-//     };
-//   },
-// };
-</script>
-
 <template>
   <div>
     <BaseHeader />
-    <BaseNavigation
-      @showMobileMenu="showMobileMenu = true"
-      v-show="!showMobileMenu"
-    />
+    <!-- <BaseNavigation /> -->
+    <Navigation />
     <div>
       <slot />
     </div>
 
-    <Footer class="bg-[#7D0B2B]">
+    <footer class="bg-[#7D0B2B]">
       <div class="container mx-auto px-4 lg:px-[160px] lg:py-[40px]">
         <div
           class="grid xl:flex items-center justify-between text-white xl:gap-20 pt-10"
@@ -104,32 +87,11 @@
           © Copyright 2024, All Rights Reserved by Aditama
         </p>
       </div>
-    </Footer>
+    </footer>
   </div>
-
-  <!-- <header>
-      <div>
-        <NuxtLink>
-          <NuxtImg src="/icons/logo.png" />
-        </NuxtLink>
-      </div>
-      <nav>
-        <ul>
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li><NuxtLink to="/about">About</NuxtLink></li>
-          <li><NuxtLink to="/matches">find love</NuxtLink></li>
-        </ul>
-      </nav>
-    </header> -->
-
-  <!-- ====================Output the page content===== -->
 </template>
 
 <style scoped>
-/* .router-link-exact-active {
-  color: #12b488;
-} */
-
 @media (max-width: 560px) {
   .btn {
     display: none;

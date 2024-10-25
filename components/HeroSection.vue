@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <section class="lg:h-[85vh] bg-[#fafafa] pb-10 md:p-0">
+  <section class="lg:h-[85vh] pt-10 lg:pt-0 bg-[#fafafa] pb-10 md:p-0">
     <div
       class="container mx-auto px-4 md:px-10 flex flex-col-reverse md:flex-row md:justify-between items-center h-full md:py-[60px]"
     >

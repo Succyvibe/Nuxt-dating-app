@@ -3,7 +3,7 @@
 <template>
   <div>
     <header
-      class="hidden lg:block h-[40px] md:h-[60px] lg:h-[80px] bg-[#fb1656]"
+      class="h-[40px] md:h-[60px] lg:h-[80px] bg-[#fb1656] hidden lg:block"
     >
       <div
         class="container mx-auto flex justify-between items-center h-full px-4"
